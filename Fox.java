@@ -28,8 +28,7 @@ public class Fox extends Animal
     private static final Random rand = Randomizer.getRandom();
     
     // Individual characteristics (instance fields).
-    // The fox's age.
-    private int age;
+    
     // The fox's food level, which is increased by eating rabbits.
     private int foodLevel;
 
@@ -45,11 +44,11 @@ public class Fox extends Animal
     {
         super(field, location);
         if(randomAge) {
-            age = rand.nextInt(MAX_AGE);
+            setAge(rand.nextInt(MAX_AGE));
             foodLevel = rand.nextInt(RABBIT_FOOD_VALUE);
         }
         else {
-            age = 0;
+            setAge(0);
             foodLevel = RABBIT_FOOD_VALUE;
         }
     }
@@ -81,17 +80,6 @@ public class Fox extends Animal
                 // Overcrowding.
                 setDead();
             }
-        }
-    }
-
-    /**
-     * Increase the age. This could result in the fox's death.
-     */
-    private void incrementAge()
-    {
-        age++;
-        if(age > MAX_AGE) {
-            setDead();
         }
     }
     
@@ -149,26 +137,36 @@ public class Fox extends Animal
             newFoxes.add(young);
         }
     }
-        
-    /**
-     * Generate a number representing the number of births,
-     * if it can breed.
-     * @return The number of births (may be zero).
-     */
-    private int breed()
-    {
-        int births = 0;
-        if(canBreed() && rand.nextDouble() <= BREEDING_PROBABILITY) {
-            births = rand.nextInt(MAX_LITTER_SIZE) + 1;
-        }
-        return births;
-    }
-
+    
     /**
      * A fox can breed if it has reached the breeding age.
      */
-    private boolean canBreed()
+    public int getBreedingAge()
     {
-        return age >= BREEDING_AGE;
+        return BREEDING_AGE;
+    }
+    
+    /**
+     * Returns the max age of the fox
+     */
+    public int getMaxAge()
+    {
+        return MAX_AGE;
+    }
+    
+    /**
+     * Returns the breeding probability of the fox
+     */
+    public double getBreedingProb()
+    {
+        return BREEDING_PROBABILITY;
+    }
+    
+    /**
+     * Returns the max litter size of the fox
+     */
+    public int getMaxLitter()
+    {
+        return MAX_LITTER_SIZE;
     }
 }
