@@ -7,7 +7,7 @@ import java.util.Random;
  * Coyotes age, move, eat foxes, and die.
  *
  * @author Matthew Lee
- * @version 11.28.2021
+ * @version 11.29.2021
  */
 public class Coyote extends Animal
 {
