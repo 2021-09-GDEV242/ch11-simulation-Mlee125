@@ -16,14 +16,14 @@ public class Coyote extends Animal
     // The age at which a coyote can start to breed.
     private static final int BREEDING_AGE = 10;
     // The age to which a coyote can live.
-    private static final int MAX_AGE = 125;
+    private static final int MAX_AGE = 100;
     // The likelihood of a coyote breeding.
-    private static final double BREEDING_PROBABILITY = 0.10;
+    private static final double BREEDING_PROBABILITY = 0.1;
     // The maximum number of births.
-    private static final int MAX_LITTER_SIZE = 2;
-    // The food value of a single rabbit. In effect, this is the
+    private static final int MAX_LITTER_SIZE = 9;
+    // The food value of a single fox. In effect, this is the
     // number of steps a coyote can go before it has to eat again.
-    private static final int FOX_FOOD_VALUE = 6;
+    private static final int FOX_FOOD_VALUE = 11;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     

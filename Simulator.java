@@ -19,11 +19,11 @@ public class Simulator
     // The default depth of the grid.
     private static final int DEFAULT_DEPTH = 80;
     // The probability that a fox will be created in any given grid position.
-    private static final double FOX_CREATION_PROBABILITY = 0.02;
+    private static final double FOX_CREATION_PROBABILITY = 0.12;
     // The probability that a rabbit will be created in any given grid position.
-    private static final double RABBIT_CREATION_PROBABILITY = 0.08;    
+    private static final double RABBIT_CREATION_PROBABILITY = 0.15;    
     // The probability that a coyote will be created in any given grid position.
-    private static final double COYOTE_CREATION_PROBABILITY = 0.03;
+    private static final double COYOTE_CREATION_PROBABILITY = 0.10;
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -87,7 +87,7 @@ public class Simulator
     {
         for(int step = 1; step <= numSteps && view.isViable(field); step++) {
             simulateOneStep();
-            // delay(60);   // uncomment this to run more slowly
+            //delay(40);   // uncomment this to run more slowly
         }
     }
     
